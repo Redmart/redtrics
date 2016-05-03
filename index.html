@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Redtrics by Redmart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Redtrics</h1>
+      <h2 class="project-tagline">Python redtrics analyzer for Github and Travis</h2>
+      <a href="https://github.com/Redmart/redtrics" class="btn">View on GitHub</a>
+      <a href="https://github.com/Redmart/redtrics/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Redmart/redtrics/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="redmart-github-metrics" class="anchor" href="#redmart-github-metrics" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>RedMart Github Metrics</h1>
+
+<p>Redtrics generates metrics about the use of Github by developers.</p>
+
+<h2>
+<a id="contributors" class="anchor" href="#contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributors</h2>
+
+<ul>
+<li>Aniceto Garcia (Concept &amp; Developer)</li>
+<li>Alberto Resco (Developer &amp; Main Contributor)</li>
+<li>Benjos Anthony (Developer)</li>
+<li>Mick Jermsack (Developer)</li>
+</ul>
+
+<h2>
+<a id="external-dependencies" class="anchor" href="#external-dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>External Dependencies</h2>
+
+<ul>
+<li>InfluxDB</li>
+<li>Github</li>
+</ul>
+
+<h2>
+<a id="setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h2>
+
+<h3>
+<a id="install-binary" class="anchor" href="#install-binary" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install binary</h3>
+
+<p>You can install the stable build by running:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ pip install redtrics</pre></div>
+
+<p>or install the latest build:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ curl -o redtrics.zip https://github.com/RedMart/redtrics/archive/master.zip
+$ unzip redtrics.zip
+$ <span class="pl-c1">cd</span> redtrics
+$ python setup.py install</pre></div>
+
+<h3>
+<a id="setup-settings" class="anchor" href="#setup-settings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup settings</h3>
+
+<p>Some settings set with default values but we encourage you to setup properly for your current needs.
+You must create the file <code>/opt/redtrics/etc/settings.py</code></p>
+
+<div class="highlight highlight-source-python"><pre>github_token <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>your_github_token<span class="pl-pds">'</span></span>
+github_organization <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>Your Organization<span class="pl-pds">'</span></span></pre></div>
+
+<div class="highlight highlight-source-python"><pre>influxdb_settings <span class="pl-k">=</span> {
+    <span class="pl-s"><span class="pl-pds">'</span>host<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>localhost<span class="pl-pds">'</span></span>,
+    <span class="pl-s"><span class="pl-pds">'</span>database<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>redtrics<span class="pl-pds">'</span></span>,
+    <span class="pl-s"><span class="pl-pds">'</span>username<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>redtrics<span class="pl-pds">'</span></span>,
+    <span class="pl-s"><span class="pl-pds">'</span>password<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>redtrics<span class="pl-pds">'</span></span>
+}</pre></div>
+
+<div class="highlight highlight-source-python"><pre>email <span class="pl-k">=</span> {
+    <span class="pl-s"><span class="pl-pds">'</span>from_email<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>change@me.com<span class="pl-pds">'</span></span>,
+    <span class="pl-s"><span class="pl-pds">'</span>from_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Tech Weekly Metrics<span class="pl-pds">'</span></span>,
+    <span class="pl-s"><span class="pl-pds">'</span>to<span class="pl-pds">'</span></span>: [<span class="pl-s"><span class="pl-pds">'</span>change@me.com<span class="pl-pds">'</span></span>],
+    <span class="pl-s"><span class="pl-pds">'</span>smtp_host<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>smtp.example.com<span class="pl-pds">'</span></span>,
+    <span class="pl-s"><span class="pl-pds">'</span>smtp_port<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>25<span class="pl-pds">'</span></span>,
+}</pre></div>
+
+<h3>
+<a id="overwrite-mail-template" class="anchor" href="#overwrite-mail-template" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overwrite mail template</h3>
+
+<p>If you want to create your own template you must create your own in the file <code>/opt/redtrics/templates/mail.html</code> providing the <a href="#metrics">metrics</a> you want to show.</p>
+
+<h2>
+<a id="metrics-provided" class="anchor" href="#metrics-provided" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="metrics"></a>Metrics provided</h2>
+
+<h3>
+<a id="branch-build-status" class="anchor" href="#branch-build-status" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Branch Build Status</h3>
+
+<pre><code>    {
+        'build_status': {
+            'success': 10,  # number of travis builds succeded
+            'failure': 2   # number of travis builds failed
+        }
+    }
+</code></pre>
+
+<h3>
+<a id="commits-on-the-last-week-7-previous-days" class="anchor" href="#commits-on-the-last-week-7-previous-days" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commits on the last week (7 previous days)</h3>
+
+<pre><code>    {
+        'commits_last_week': {
+            'commits': 15,  # number of commits
+            'additions': 100,  # lines added
+            'deletions': 50,  # lines deleted
+            'biggest': 20  # biggest commit (lines added + deleted)
+        }
+    }
+</code></pre>
+
+<h3>
+<a id="pull-requests-stats" class="anchor" href="#pull-requests-stats" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pull Requests stats</h3>
+
+<pre><code>    {
+        'pr_stats': {
+            'closed': {
+                'age': {
+                    'max': 1000,  # in seconds
+                    'min': 200,  # in seconds
+                    'avg': 450, # in seconds
+                },
+                'commits': {
+                    'pr_count': 4,  # number of Pull Requests
+                    'commits_count': 14,  # total number of commits in all Pull Requests
+                    'additions': 1000,  # total lines added
+                    'deletions': 1000,  # total lines deleted
+                    'biggest': 1000  # biggest Pull Request (lines added + deleted)
+                }
+            },
+            'open': []  # List of PullRequest objects
+        }
+    }
+</code></pre>
+
+<p><em>Handcrafted with ♥ at RedMart.</em></p>
+
+<p>All Rights Reserved.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Redmart/redtrics">Redtrics</a> is maintained by <a href="https://github.com/Redmart">Redmart</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
