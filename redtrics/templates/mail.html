@@ -1,0 +1,784 @@
+<DOCTYPE html
+         PUBLIC>
+    <html xmlns="http://www.w3.org/1999/xhtml"
+          xml:lang="en"
+          lang="en">
+    <head>
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=utf-8"/>
+        <title>Tech Weekly Metrics for Week #{{today|format_datetime('w')}}></title>
+    </head>
+    <body style="background-color:#F6F8FA;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;padding:10px;">
+
+
+    <center>
+        <table align="center"
+               border="0"
+               cellpadding="0"
+               cellspacing="0"
+               height="100%"
+               width="100%"
+               bgcolor="#eaeced">
+            <tbody>
+            <tr height="30">
+                <td align="center"
+                    valign="bottom">
+                    <table width="600">
+                        <tbody>
+                        <tr>
+                            <td align="center"
+                                valign="bottom">
+                                <table width="580"
+                                       border="0"
+                                       cellpadding="0"
+                                       cellspacing="0"
+                                       valign="top">
+                                    <tbody>
+                                    <tr>
+                                        <td valign="bottom"
+                                            align="right"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr height="8"
+                style="font-size:0;line-height:0">
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td align="center"
+                    valign="top">
+                    <table width="600">
+
+                        <tbody>
+                        <tr>
+                            <td align="center">
+                                <table width="570"
+                                       border="0"
+                                       cellpadding="0"
+                                       cellspacing="0"
+                                       valign="top">
+                                    <tbody>
+                                    <tr>
+
+                                        <td style="font-family:'Source Sans Pro',arial,sans-serif!important;font-size:25px;line-height:30px!important;font-weight:200!important;color:#34495e!important">
+                                            Week #{{today|format_datetime('w')}} in {{base}}</span>
+                                        </td>
+
+                                        <td style="font-family:'Source Sans Pro',arial,sans-serif!important;font-size:13px!important;line-height:30px!important;font-weight:400!important;color:#34495e!important;text-transform:uppercase!important"
+                                            align="right">&nbsp;</td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+
+
+                        <tr height="40">
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="center"
+                                valign="top">
+                                <table width="580"
+                                       bgcolor="#ffffff"
+                                       border="0"
+                                       cellpadding="0"
+                                       cellspacing="0"
+                                       valign="top"
+                                       style="overflow:hidden!important;border-radius:3px">
+                                    <tbody>
+                                    <tr height="46">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table width="100%">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:18px!important;line-height:30px!important;font-weight:600!important;color:#34495e!important">
+                                                            PULL REQUEST AVERAGE AGE</h2></td>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:18px!important;line-height:30px!important;font-weight:600!important;color:#34495e!important">
+                                                            PULL REQUEST MAX AGE</h2></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table width="100%">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:52px!important;line-height:38px!important;font-weight:200!important;color:#384055!important">
+                                                            {{ pr_stats.get("closed", {}).get("age", {}).get("avg", 0) |
+                                                            format_datetime("HH'h':m'm'") }}
+                                                        </h2></td>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:52px!important;line-height:38px!important;font-weight:200!important;color:#384055!important">
+                                                            {{ pr_stats.get("closed", {}).get("age", {}).get("max", 0) |
+                                                            format_datetime("HH'h':m'm'") }}
+                                                        </h2></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table border="0"
+                                                   cellpadding="0"
+                                                   cellspacing="0"
+                                                   width="100%">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="50%"
+                                                        align="center"
+                                                        style="font-family:'Source Sans Pro',arial,sans-serif!important;font-size:14px!important;line-height:30px!important;font-weight:600!important;color:#828796!important">
+                                                        &nbsp;</td>
+                                                    <td width="50%"
+                                                        align="center"
+                                                        style="font-family:'Source Sans Pro',arial,sans-serif!important;font-size:14px!important;line-height:30px!important;font-weight:600!important;color:#828796!important">
+                                                        &nbsp;</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+
+
+                        <tr height="40">
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="center"
+                                valign="top">
+                                <table width="580"
+                                       bgcolor="#ffffff"
+                                       border="0"
+                                       cellpadding="0"
+                                       cellspacing="0"
+                                       valign="top"
+                                       style="overflow:hidden!important;border-radius:3px">
+                                    <tbody>
+                                    <tr height="46">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table width="100%">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:18px!important;line-height:30px!important;font-weight:600!important;color:#34495e!important">
+                                                            NUMBER OF PULL REQUESTS</h2></td>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:18px!important;line-height:30px!important;font-weight:600!important;color:#34495e!important">
+                                                            PULL REQUEST AVERAGE SIZE</h2></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table width="100%">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:52px!important;line-height:38px!important;font-weight:200!important;color:#384055!important">
+                                                            {{ pr_stats.get("closed", {}).get("commits",
+                                                            {}).get("pr_count", 0) }}
+                                                        </h2></td>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:52px!important;line-height:38px!important;font-weight:200!important;color:#384055!important">
+                                                            {% if pr_stats.get("closed", {}).get("commits",
+                                                            {}).get("pr_count", 0) == 0 %}
+                                                            0
+                                                            {% else %}
+                                                            {{ '%d' % ((pr_stats.get("closed", {}).get("commits",
+                                                            {}).get("additions", 0) + pr_stats.get("closed",
+                                                            {}).get("commits", {}).get("deletions", 0)) /
+                                                            pr_stats.get("closed", {}).get("commits",
+                                                            {}).get("pr_count", 1)) }}
+                                                            {% endif %}
+                                                        </h2></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table border="0"
+                                                   cellpadding="0"
+                                                   cellspacing="0"
+                                                   width="100%">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="50%"
+                                                        align="center"
+                                                        style="font-family:'Source Sans Pro',arial,sans-serif!important;font-size:14px!important;line-height:30px!important;font-weight:600!important;color:#828796!important">
+                                                        &nbsp;</td>
+                                                    <td width="50%"
+                                                        align="center"
+                                                        style="font-family:'Source Sans Pro',arial,sans-serif!important;font-size:14px!important;line-height:30px!important;font-weight:600!important;color:#828796!important">
+                                                        Size = lines added + lines deleted
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr height="40">
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="center"
+                                valign="top">
+                                <table width="580"
+                                       bgcolor="#ffffff"
+                                       border="0"
+                                       cellpadding="0"
+                                       cellspacing="0"
+                                       valign="top"
+                                       style="overflow:hidden!important;border-radius:3px">
+                                    <tbody>
+                                    <tr height="46">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table width="100%">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:18px!important;line-height:30px!important;font-weight:600!important;color:#34495e!important">
+                                                            LINES COMMITTED</h2></td>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:18px!important;line-height:30px!important;font-weight:600!important;color:#34495e!important">
+                                                            LINES COMMITTED NOT IN PR</h2></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table width="100%">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:52px!important;line-height:38px!important;font-weight:200!important;color:#384055!important">
+                                                            {{ '%0.1f' % ((commits_last_week.get("additions", 0) +
+                                                            commits_last_week.get("deletions" , 0)) / 1000) | float }}k
+                                                        </h2></td>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:52px!important;line-height:38px!important;font-weight:200!important;color:#EE4054!important">
+                                                            {{ '%0.1f' % ((commits_last_week.get("additions", 0) +
+                                                            commits_last_week.get("deletions", 0) -
+                                                            pr_stats.get("closed", {}).get("commits",
+                                                            {}).get("additions", 0) - pr_stats.get("closed",
+                                                            {}).get("commits", {}).get("deletions", 0)) / 1000 ) | float
+                                                            }}k
+                                                        </h2></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table border="0"
+                                                   cellpadding="0"
+                                                   cellspacing="0"
+                                                   width="100%">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="50%"
+                                                        align="center"
+                                                        style="font-family:'Source Sans Pro',arial,sans-serif!important;font-size:14px!important;line-height:30px!important;font-weight:600!important;color:#828796!important">
+                                                        Lines = lines added + lines deleted
+                                                    </td>
+                                                    <td width="50%"
+                                                        align="center"
+                                                        style="font-family:'Source Sans Pro',arial,sans-serif!important;font-size:14px!important;line-height:30px!important;font-weight:600!important;color:#828796!important">
+                                                        Lines = lines added + lines deleted
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr height="40">
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="center"
+                                valign="top">
+                                <table width="580"
+                                       bgcolor="#ffffff"
+                                       border="0"
+                                       cellpadding="0"
+                                       cellspacing="0"
+                                       valign="top"
+                                       style="overflow:hidden!important;border-radius:3px">
+                                    <tbody>
+                                    <tr height="46">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table width="100%">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:18px!important;line-height:30px!important;font-weight:600!important;color:#34495e!important">
+                                                            NUMBER OF COMMITS</h2></td>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:18px!important;line-height:30px!important;font-weight:600!important;color:#34495e!important">
+                                                            COMMITS PER PR</h2></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table width="100%">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:52px!important;line-height:38px!important;font-weight:200!important;color:#384055!important">
+                                                            {{ commits_last_week.get("commits", 0) }}</h2></td>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:52px!important;line-height:38px!important;font-weight:200!important;color:#384055!important">
+                                                            {% if pr_stats.get("closed", {}).get("commits",{}).get("pr_count",0) == 0 %}
+                                                            0
+                                                            {% else %}
+                                                            {{ pr_stats.get("closed", {}).get("commits",{}).get("commits_count",0) / pr_stats.get("closed", {}).get("commits",{}).get("pr_count",0) }}
+                                                            {% endif %}
+                                                        </h2></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table border="0"
+                                                   cellpadding="0"
+                                                   cellspacing="0"
+                                                   width="100%">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="50%"
+                                                        align="center"
+                                                        style="font-family:'Source Sans Pro',arial,sans-serif!important;font-size:14px!important;line-height:30px!important;font-weight:600!important;color:#828796!important">
+                                                        &nbsp;</td>
+                                                    <td width="50%"
+                                                        align="center"
+                                                        style="font-family:'Source Sans Pro',arial,sans-serif!important;font-size:14px!important;line-height:30px!important;font-weight:600!important;color:#828796!important">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr height="40">
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="center"
+                                valign="top">
+                                <table width="580"
+                                       bgcolor="#ffffff"
+                                       border="0"
+                                       cellpadding="0"
+                                       cellspacing="0"
+                                       valign="top"
+                                       style="overflow:hidden!important;border-radius:3px">
+                                    <tbody>
+                                    <tr height="46">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table width="100%">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:18px!important;line-height:30px!important;font-weight:600!important;color:#34495e!important">
+                                                            AVERAGE COMMIT SIZE</h2></td>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:18px!important;line-height:30px!important;font-weight:600!important;color:#34495e!important">
+                                                            MAX COMMIT SIZE</h2></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table width="100%">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:52px!important;line-height:38px!important;font-weight:200!important;color:#384055!important">
+                                                            {% if commits_last_week.get("commits", 0) == 0 %}
+                                                            0
+                                                            {% else %}
+                                                            {{ '%0.1f' % ((commits_last_week.get("additions", 0) +
+                                                            commits_last_week.get("deletions", 0)) /
+                                                            (commits_last_week.get("commits")* 1000)) }}k
+                                                            {% endif %}
+                                                            </h2></td>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:52px!important;line-height:38px!important;font-weight:200!important;color:#384055!important">
+                                                            {{ '%0.1f' % (commits_last_week.get("biggest",
+                                                        0) / 1000) |float }}k
+                                                        </h2></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table border="0"
+                                                   cellpadding="0"
+                                                   cellspacing="0"
+                                                   width="100%">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="50%"
+                                                        align="center"
+                                                        style="font-family:'Source Sans Pro',arial,sans-serif!important;font-size:14px!important;line-height:30px!important;font-weight:600!important;color:#828796!important">
+                                                        Lines = lines added + lines deleted
+                                                    </td>
+                                                    <td width="50%"
+                                                        align="center"
+                                                        style="font-family:'Source Sans Pro',arial,sans-serif!important;font-size:14px!important;line-height:30px!important;font-weight:600!important;color:#828796!important">
+                                                        Lines = lines added + lines deleted
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr height="40">
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="center"
+                                valign="top">
+                                <table width="580"
+                                       bgcolor="#ffffff"
+                                       border="0"
+                                       cellpadding="0"
+                                       cellspacing="0"
+                                       valign="top"
+                                       style="overflow:hidden!important;border-radius:3px">
+                                    <tbody>
+                                    <tr height="46">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table width="100%">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:18px!important;line-height:30px!important;font-weight:600!important;color:#34495e!important">
+                                                            BUILDS ON TRAVIS SUCCEDED</h2></td>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:18px!important;line-height:30px!important;font-weight:600!important;color:#34495e!important">
+                                                            BUILDS ON TRAVIS FAILED</h2></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table width="100%">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:52px!important;line-height:38px!important;font-weight:200!important;color:#2ECC71!important">
+                                                            {{ build_status.get("success", 0) }}
+                                                        </h2></td>
+                                                    <td width="50%"
+                                                        align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:52px!important;line-height:38px!important;font-weight:200!important;color:#EE4054!important">
+                                                            {{ build_status.get("failed", 0) }}
+                                                        </h2></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table border="0"
+                                                   cellpadding="0"
+                                                   cellspacing="0"
+                                                   width="100%">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="50%"
+                                                        align="center"
+                                                        style="font-family:'Source Sans Pro',arial,sans-serif!important;font-size:14px!important;line-height:30px!important;font-weight:600!important;color:#828796!important">
+                                                        &nbsp;</td>
+                                                    <td width="50%"
+                                                        align="center"
+                                                        style="font-family:'Source Sans Pro',arial,sans-serif!important;font-size:14px!important;line-height:30px!important;font-weight:600!important;color:#828796!important">
+                                                        &nbsp;</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr height="40">
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="center"
+                                valign="top">
+                                <table width="580"
+                                       bgcolor="#ffffff"
+                                       border="0"
+                                       cellpadding="0"
+                                       cellspacing="0"
+                                       valign="top"
+                                       style="overflow:hidden!important;border-radius:3px">
+                                    <tbody>
+                                    <tr height="46">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table width="85%">
+                                                <tbody>
+                                                <tr>
+                                                    <td align="center">
+                                                        <h2 style="margin:0!important;font-family:'Source Sans Pro',arial,sans-serif!important;font-size:28px!important;line-height:38px!important;font-weight:200!important;color:#34495e!important">
+                                                            Open Pull Requests</h2></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table border="0"
+                                                   cellpadding="0"
+                                                   cellspacing="0"
+                                                   width="78%">
+                                                <tbody>
+                                                {% for b in pr_stats.get("open", []) | sort(attribute='created_at') %}
+                                                <tr>
+                                                    <td></td>
+                                                    <td style="font-family:'Source Sans Pro',arial,sans-serif!important;font-size:16px!important;line-height:20px!important;color:#828796!important"
+                                                        colspan="3">
+                        <span style="font-size:12px;">
+                            <a href="{{ b.html_url }}"
+                               style="color: #34495E;text-decoration:none"
+                               target="_blank">
+                                <strong>{{ b.created_at | format_datetime('dd/MM/yyyy') }} -
+                                        {{b.repository[1]}}: </strong> {{
+                                                                       b.title
+                                                                       }}
+                            </a>
+                        </span>
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr height="25">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+
+
+                        <tr height="58">
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <table width="580"
+                                       border="0"
+                                       cellpadding="0"
+                                       cellspacing="0"
+                                       valign="top">
+                                    <tbody>
+                                    <tr>
+                                        <td align="center"
+                                            valign="top"><img src="https://partners.redmart.com/img/logo-redmart.svg"
+                                                              width="138"
+                                                              height="30"
+                                                              alt="RedMart"
+                                                              style="border:0;width:138px;min-height:30px"
+                                                              class="CToWUd"></td>
+                                    </tr>
+                                    <tr height="21">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"
+                                            valign="top"
+                                            style="font-family:'Source Sans Pro',sans-serif!important;font-weight:400!important;color:#7e8890!important;font-size:12px!important;letter-spacing:.045em!important">
+                                            Happy {{today|format_datetime("EEEE")}} Delivered to you by RedMart
+                                        </td>
+                                    </tr>
+                                    <tr height="38">
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </center>
+    </body>
+    </html>
