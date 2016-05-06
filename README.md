@@ -8,7 +8,7 @@ Contributors
 - Aniceto Garcia (Concept & Developer)
 - Alberto Resco (Developer & Main Contributor)
 - Benjos Antony (Developer)
-- Mick Jermsack (Developer)
+- Mick Jermsurawong (Developer)
 - Sonia Fabre (UI Design)
 
 External Dependencies
